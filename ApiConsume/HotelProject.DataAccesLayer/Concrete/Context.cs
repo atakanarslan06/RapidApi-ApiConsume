@@ -13,9 +13,9 @@ namespace HotelProject.DataAccesLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Server=ATAKAN\\MYBLOG;Database=ApiDb;Integrated Security=false;");
+            //optionsBuilder.UseSqlServer("Server=ATAKAN\\MYBLOG;Database=ApiDb;Integrated Security=True;");
             //optionsBuilder.UseSqlServer("server=ATAKAN\\MYBLOG;initial catalog=ApiDb;integrated security:true");
-            //optionsBuilder.UseSqlServer("Server=ATAKAN\\MYBLOG;Database=ApiDb;Trusted_Connection=;");
+            optionsBuilder.UseSqlServer("Server=ATAKAN\\MYBLOG;Database=ApiDb;Trusted_Connection=True;TrustServerCertificate=True");
             
         }
         public DbSet<Room> Rooms { get; set; }
