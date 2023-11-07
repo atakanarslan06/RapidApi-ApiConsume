@@ -1,4 +1,5 @@
 ﻿using HotelProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
@@ -9,14 +10,11 @@ using System.Threading.Tasks;
 
 namespace HotelProject.DataAccesLayer.Concrete
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Server=ATAKAN\\MYBLOG;Database=ApiDb;Integrated Security=True;");
-            //optionsBuilder.UseSqlServer("server=ATAKAN\\MYBLOG;initial catalog=ApiDb;integrated security:true");
-            optionsBuilder.UseSqlServer("Server=ATAKAN\\MYBLOG;Database=ApiDb;Trusted_Connection=True;TrustServerCertificate=True");
-            
+            optionsBuilder.UseSqlServer("Server=ATAKAN\\MYBLOG;Database=ApiDb;Trusted_Connection=True;TrustServerCertificate=True");      
         }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Service> Services { get; set; }
@@ -25,4 +23,3 @@ namespace HotelProject.DataAccesLayer.Concrete
         public DbSet<Testimonial> Testimonials { get; set; }
     }
 }
-//Server=myServerAddress;Database=myDataBase;Trusted_Connection=True;
