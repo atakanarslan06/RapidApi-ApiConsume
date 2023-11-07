@@ -7,11 +7,11 @@ namespace HotelProject.WebUI.Controllers
 {
     public class RegisterController : Controller
     {
-        private readonly UserManager<AppUser> userManager;
+        private readonly UserManager<AppUser> _userManager;
 
         public RegisterController(UserManager<AppUser> userManager)
         {
-            this.userManager = userManager;
+            _userManager = userManager;
         }
         [HttpGet]
         public IActionResult Index()
@@ -34,7 +34,7 @@ namespace HotelProject.WebUI.Controllers
                 UserName = createNewUserDto.UserName,
 
             };
-            var result = await userManager.CreateAsync(appUser, createNewUserDto.Password);
+            var result = await _userManager.CreateAsync(appUser, createNewUserDto.Password);
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "Login");
