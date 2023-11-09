@@ -30,7 +30,7 @@ namespace HotelProject.WebUI.Controllers
             var jsonData = JsonConvert.SerializeObject(createSubscribeDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             await client.PostAsync("http://localhost:5066/api/Subscribe", stringContent);
-                return RedirectToAction("Index", "Default");
+            return RedirectToAction("Index", "Default");
         }
     }
 }
