@@ -6,7 +6,7 @@ namespace WebApiJwt.Models
 {
     public class CreateToken
     {
-        public void TokenCreate()
+        public string TokenCreate()
         {
             var bytes = Encoding.UTF8.GetBytes("aspnetcoreapiapi");
             SymmetricSecurityKey key = new SymmetricSecurityKey(bytes);
@@ -15,7 +15,7 @@ namespace WebApiJwt.Models
                 signingCredentials:credentials);
 
             JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
-            handler.WriteToken(token);
+            return handler.WriteToken(token);
         }
     }
 }
