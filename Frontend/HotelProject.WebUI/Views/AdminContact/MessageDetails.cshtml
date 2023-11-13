@@ -1,4 +1,4 @@
-﻿@model List<InboxContactDto>
+﻿@model GetMessageByIDDTO
 @{
     ViewData["Title"] = "Inbox";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
@@ -17,11 +17,12 @@
             </button>
         </div>
     </div>
+
     <div class="read-content">
         <div class="media pt-5">
             <img class="mr-3 rounded-circle" src="~/theme/images/avatar/1.jpg">
             <div class="media-body">
-                <h5 class="m-b-3">Atakan Arslan</h5>
+                <h5 class="m-b-3">@Model.ReceiverName</h5>
                 <p class="m-b-2">20 May 2018</p>
             </div>
 
