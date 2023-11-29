@@ -23,10 +23,7 @@ namespace RapidApiConsume.Controllers
             };
             using (var response = await client.SendAsync(request))
             {
-                response.EnsureSuccessStatusCode();
-                var body = await response.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<ExchangeViewModel>(body);
-                return View(values.exchange_rates.ToList());
+               
             }
         }
     }
