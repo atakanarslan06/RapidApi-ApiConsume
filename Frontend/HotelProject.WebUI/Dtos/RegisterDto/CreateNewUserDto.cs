@@ -18,5 +18,6 @@ namespace HotelProject.WebUI.Dtos.RegisterDto
 
         [Required(ErrorMessage = "Şifre Alanı Gereklidir")]
         public string Password { get; set; }
+       
     }
 }
