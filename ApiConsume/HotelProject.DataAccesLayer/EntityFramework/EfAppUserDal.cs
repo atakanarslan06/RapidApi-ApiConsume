@@ -18,6 +18,12 @@ namespace HotelProject.DataAccesLayer.EntityFramework
 
         }
 
+        public int AppuserCount()
+        {
+            var context = new Context();
+            var value = context.Users.Count();
+            return value;
+        }
         public List<AppUser> UserListWithWorkLocation()
         {
             var context = new Context();
