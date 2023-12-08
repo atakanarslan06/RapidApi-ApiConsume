@@ -16,12 +16,16 @@ namespace HotelProject.WebUI.ViewComponents.Dashboard
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("http://localhost:5066/api/DashboardWidgets/StaffCount");
-            if (responseMessage.IsSuccessStatusCode)
-            {
+
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                //var values = JsonConvert.DeserializeObject<List<ResultGuestDto>>(jsonData);
                 ViewBag.v = jsonData;
-            }
+            
+            var client2 = _httpClientFactory.CreateClient();
+            var responseMessage2 = await client.GetAsync("http://localhost:5066/api/DashboardWidgets/BookingCount");
+           
+                var jsonData2 = await responseMessage.Content.ReadAsStringAsync();
+                ViewBag.v2 = jsonData2;
+            
             return View();
         }
     }
