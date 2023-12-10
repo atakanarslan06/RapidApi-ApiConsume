@@ -25,8 +25,18 @@ namespace HotelProject.WebUI.Controllers
             return View(userEditViewModel);
         }
         [HttpPost]
-        public IActionResult Index(string x)
+        public async Task<IActionResult> Index(UserEditViewModel userEditViewModel)
         {
+            if(userEditViewModel.Password == userEditViewModel.Password)
+            {
+                var user = await _userManager.FindByNameAsync(User.Identity.Name);
+                user.Name = userEditViewModel.Name;
+                user.SurName = userEditViewModel.Surname;
+                user.Email = userEditViewModel.Email;
+                user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, userEditViewModel.Password);
+                await _userManager.UpdateAsync(user);
+                return RedirectToAction("Index", "Login");
+            }
             return View();
         }
     }
