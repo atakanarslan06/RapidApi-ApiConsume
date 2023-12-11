@@ -31,3 +31,4 @@ Authentication and authorization with Json Web Token
 ![foto-14](https://github.com/atakanarslan06/RapidApi-ApiConsume/assets/82101800/aa754560-3084-4308-9da2-b75da87d5119)
 ![foto-15](https://github.com/atakanarslan06/RapidApi-ApiConsume/assets/82101800/3e5cad50-3610-406b-a93d-168dc77508af)
 ![foto-17](https://github.com/atakanarslan06/RapidApi-ApiConsume/assets/82101800/881cddae-841f-40a2-85a3-af8b34725e0c)
+
